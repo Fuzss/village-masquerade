@@ -87,7 +87,7 @@ public class EquipmentRenderingHandler {
                 context.getEquipmentRenderer()) {
             @Override
             public void submit(PoseStack poseStack, SubmitNodeCollector nodeCollector, int packedLight, S renderState, float yRot, float xRot) {
-                if (entityType.is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
+                if (entityType.builtInRegistryHolder().is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
                     super.submit(poseStack, nodeCollector, packedLight, renderState, yRot, xRot);
                 }
             }
@@ -103,7 +103,7 @@ public class EquipmentRenderingHandler {
                 context.getEquipmentRenderer()) {
             @Override
             public void submit(PoseStack poseStack, SubmitNodeCollector nodeCollector, int packedLight, S renderState, float yRot, float xRot) {
-                if (entityType.is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
+                if (entityType.builtInRegistryHolder().is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
                     super.submit(poseStack, nodeCollector, packedLight, renderState, yRot, xRot);
                 }
             }
@@ -119,7 +119,7 @@ public class EquipmentRenderingHandler {
                 context.getEquipmentRenderer()) {
             @Override
             public void submit(PoseStack poseStack, SubmitNodeCollector nodeCollector, int packedLight, S renderState, float yRot, float xRot) {
-                if (entityType.is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
+                if (entityType.builtInRegistryHolder().is(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)) {
                     super.submit(poseStack, nodeCollector, packedLight, renderState, yRot, xRot);
                 }
             }

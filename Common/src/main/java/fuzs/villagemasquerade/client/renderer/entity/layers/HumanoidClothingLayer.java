@@ -29,7 +29,7 @@ public abstract class HumanoidClothingLayer<S extends HumanoidRenderState, M ext
      *         HumanoidRenderState)
      */
     @Override
-    protected void renderArmorPiece(PoseStack poseStack, SubmitNodeCollector nodeCollector, ItemStack item, EquipmentSlot slot, int packedLight, S renderState) {
+    public void renderArmorPiece(PoseStack poseStack, SubmitNodeCollector nodeCollector, ItemStack item, EquipmentSlot slot, int packedLight, S renderState) {
         Equippable equippable = item.get(DataComponents.EQUIPPABLE);
         if (equippable != null && shouldRender(equippable, slot)) {
             EquipmentClientInfo.LayerType layerType = this.getLayerType(slot);

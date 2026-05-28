@@ -1,6 +1,6 @@
 package fuzs.villagemasquerade.fabric;
 
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.villagemasquerade.VillageMasquerade;
 import net.fabricmc.api.ModInitializer;
 

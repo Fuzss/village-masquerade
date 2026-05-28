@@ -1,8 +1,8 @@
 package fuzs.villagemasquerade.handler;
 
 import com.google.common.collect.ImmutableList;
-import fuzs.puzzleslib.api.event.v1.core.EventResult;
-import fuzs.puzzleslib.api.event.v1.data.MutableDouble;
+import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
+import fuzs.puzzleslib.common.api.event.v1.data.MutableDouble;
 import fuzs.villagemasquerade.init.ModItems;
 import fuzs.villagemasquerade.init.ModTags;
 import net.minecraft.core.Holder;
@@ -11,10 +11,7 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
@@ -54,7 +51,7 @@ public class ClothingEquipmentHandler {
     }
 
     private static @Nullable Holder<Item> getHeadItem(LivingEntity livingEntity) {
-        if (livingEntity.getType().is(EntityTypeTags.ILLAGER)) {
+        if (livingEntity.is(EntityTypeTags.ILLAGER)) {
             return ModItems.ILLAGER_HEAD_ITEM;
         } else if (livingEntity instanceof Villager) {
             return ModItems.VILLAGER_HEAD_ITEM;
@@ -65,13 +62,13 @@ public class ClothingEquipmentHandler {
         }
     }
 
-    public static EventResult onEntityLoad(Entity entity, ServerLevel serverLevel, boolean isNewlySpawned) {
+    public static EventResult onEntityJoin(Entity entity, ServerLevel serverLevel, boolean isLoadedFromDisk, @Nullable EntitySpawnReason entitySpawnReason) {
         if (entity instanceof IronGolem ironGolem) {
             ironGolem.targetSelector.addGoal(3,
                     new NearestAttackableTargetGoal<>(ironGolem, Player.class, 10, true, false, ENEMY_SELECTOR));
         }
 
-        if (entity instanceof Mob mob && entity.getType().is(EntityTypeTags.RAIDERS)) {
+        if (entity instanceof Mob mob && entity.is(EntityTypeTags.RAIDERS)) {
             for (WrappedGoal wrappedGoal : mob.targetSelector.getAvailableGoals()) {
                 if (wrappedGoal.getGoal() instanceof NearestAttackableTargetGoal<?> goal
                         && goal.targetType == Player.class) {

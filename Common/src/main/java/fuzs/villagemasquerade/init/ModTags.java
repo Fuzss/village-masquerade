@@ -1,6 +1,6 @@
 package fuzs.villagemasquerade.init;
 
-import fuzs.puzzleslib.api.init.v3.tags.TagFactory;
+import fuzs.puzzleslib.common.api.init.v3.tags.TagFactory;
 import fuzs.villagemasquerade.VillageMasquerade;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;

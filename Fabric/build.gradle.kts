@@ -5,17 +5,10 @@ plugins {
 dependencies {
     modApi(sharedLibs.fabricapi.fabric)
     modApi(sharedLibs.puzzleslib.fabric)
-    modImplementation(sharedLibs.fabricasm.fabric)
-    include(sharedLibs.fabricasm.fabric)
 }
 
 multiloader {
-    modFile {
-        json {
-            entrypoint(
-                "mm:early_risers",
-                "${project.group}.${project.name.lowercase()}.asm.VillageMasqueradeFabricCore"
-            )
-        }
+    mixins {
+        clientMixin("EquipmentClientInfo\u0024LayerTypeFabricMixin")
     }
 }

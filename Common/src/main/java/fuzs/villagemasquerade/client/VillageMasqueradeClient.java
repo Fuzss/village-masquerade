@@ -1,12 +1,12 @@
 package fuzs.villagemasquerade.client;
 
-import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
-import fuzs.puzzleslib.api.client.core.v1.context.LayerDefinitionsContext;
-import fuzs.puzzleslib.api.client.core.v1.context.SkullRenderersContext;
-import fuzs.puzzleslib.api.client.core.v1.context.SpecialBlockModelRenderersContext;
-import fuzs.puzzleslib.api.client.event.v1.renderer.AddLivingEntityRenderLayersCallback;
-import fuzs.puzzleslib.api.client.gui.v2.tooltip.ItemTooltipRegistry;
-import fuzs.puzzleslib.api.init.v3.registry.ResourceKeyHelper;
+import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
+import fuzs.puzzleslib.common.api.client.core.v1.context.BuiltInBlockModelsContext;
+import fuzs.puzzleslib.common.api.client.core.v1.context.LayerDefinitionsContext;
+import fuzs.puzzleslib.common.api.client.core.v1.context.SkullRenderersContext;
+import fuzs.puzzleslib.common.api.client.event.v1.renderer.AddLivingEntityRenderLayersCallback;
+import fuzs.puzzleslib.common.api.client.gui.v2.tooltip.ItemTooltipRegistry;
+import fuzs.puzzleslib.common.api.init.v3.registry.ResourceKeyHelper;
 import fuzs.villagemasquerade.VillageMasquerade;
 import fuzs.villagemasquerade.client.handler.EquipmentRenderingHandler;
 import fuzs.villagemasquerade.client.init.ModEnumConstants;
@@ -23,7 +23,10 @@ import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.model.object.skull.SkullModel;
+import net.minecraft.client.renderer.block.BuiltInBlockModels;
+import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.client.renderer.special.SkullSpecialRenderer;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -33,6 +36,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SkullBlock;
+import net.minecraft.world.level.block.WallSkullBlock;
 import org.jspecify.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -157,18 +163,46 @@ public class VillageMasqueradeClient implements ClientModConstructor {
     }
 
     @Override
-    public void onRegisterSpecialBlockModelRenderers(SpecialBlockModelRenderersContext context) {
-        context.registerSpecialBlockModelRenderer(ModBlocks.VILLAGER_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.VILLAGER_SKULL_TYPE));
-        context.registerSpecialBlockModelRenderer(ModBlocks.VILLAGER_WALL_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.VILLAGER_SKULL_TYPE));
-        context.registerSpecialBlockModelRenderer(ModBlocks.IRON_GOLEM_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.IRON_GOLEM_SKULL_TYPE));
-        context.registerSpecialBlockModelRenderer(ModBlocks.IRON_GOLEM_WALL_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.IRON_GOLEM_SKULL_TYPE));
-        context.registerSpecialBlockModelRenderer(ModBlocks.ILLAGER_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.ILLAGER_SKULL_TYPE));
-        context.registerSpecialBlockModelRenderer(ModBlocks.ILLAGER_WALL_HEAD_BLOCK.value(),
-                new SkullSpecialRenderer.Unbaked(ModRegistry.ILLAGER_SKULL_TYPE));
+    public void onRegisterBuiltInBlockModels(BuiltInBlockModelsContext context) {
+        createMobHeads(context,
+                ModRegistry.VILLAGER_SKULL_TYPE,
+                ModBlocks.VILLAGER_HEAD_BLOCK.value(),
+                ModBlocks.VILLAGER_WALL_HEAD_BLOCK.value());
+        createMobHeads(context,
+                ModRegistry.IRON_GOLEM_SKULL_TYPE,
+                ModBlocks.IRON_GOLEM_HEAD_BLOCK.value(),
+                ModBlocks.IRON_GOLEM_WALL_HEAD_BLOCK.value());
+        createMobHeads(context,
+                ModRegistry.ILLAGER_SKULL_TYPE,
+                ModBlocks.ILLAGER_HEAD_BLOCK.value(),
+                ModBlocks.ILLAGER_WALL_HEAD_BLOCK.value());
+    }
+
+    /**
+     * @see BuiltInBlockModels#createMobHeads(BuiltInBlockModels.Builder, SkullBlock.Types, Block, Block)
+     */
+    public static void createMobHeads(BuiltInBlockModelsContext context, SkullBlock.Type type, Block ground, Block wall) {
+        context.registerModelFactory(ground, createMobHead(type));
+        context.registerModelFactory(wall, createMobWallHead(type));
+    }
+
+    /**
+     * @see BuiltInBlockModels#createMobHead(SkullBlock.Types)
+     */
+    public static BuiltInBlockModels.SpecialModelFactory createMobHead(SkullBlock.Type type) {
+        return BuiltInBlockModels.specialModelWithPropertyDispatch(SkullBlock.ROTATION, (Integer rotation) -> {
+            return BuiltInBlockModels.special(new SkullSpecialRenderer.Unbaked(type),
+                    SkullBlockRenderer.TRANSFORMATIONS.freeTransformations(rotation));
+        });
+    }
+
+    /**
+     * @see BuiltInBlockModels#createMobWallHead(SkullBlock.Types)
+     */
+    public static BuiltInBlockModels.SpecialModelFactory createMobWallHead(SkullBlock.Type type) {
+        return BuiltInBlockModels.specialModelWithPropertyDispatch(WallSkullBlock.FACING, (Direction facing) -> {
+            return BuiltInBlockModels.special(new SkullSpecialRenderer.Unbaked(type),
+                    SkullBlockRenderer.TRANSFORMATIONS.wallTransformation(facing));
+        });
     }
 }

@@ -2,6 +2,7 @@ package fuzs.villagemasquerade.util;
 
 import fuzs.villagemasquerade.init.ModRegistry;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -9,30 +10,37 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.npc.villager.VillagerData;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
-import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.item.trading.TradeCost;
+import net.minecraft.world.item.trading.VillagerTrade;
+
+import java.util.List;
+import java.util.Optional;
 
 public class VillagerTradingHelper {
 
-    public static VillagerTrades.ItemListing createVillagerItemListing(Item item) {
-        return createItemListing(item, 30, 0.2F);
+    public static VillagerTrade createVillagerTrade(Holder<Item> item) {
+        return createTrade(item, 30, 0.2F);
     }
 
-    public static VillagerTrades.ItemListing createWanderingItemListing(Holder<Item> item) {
-        return createItemListing(item.value(), 1, 0.05F);
+    public static VillagerTrade createWanderingTraderTrade(Holder<Item> item) {
+        return createTrade(item, 1, 0.05F);
     }
 
-    private static VillagerTrades.ItemListing createItemListing(Item item, int villagerXp, float priceMultiplier) {
-        int priceForPiece = getPriceForPiece(getArmorEquipmentSlot(item));
-        return new VillagerTrades.ItemsForEmeralds(new ItemStack(item),
-                priceForPiece,
-                1,
+    private static VillagerTrade createTrade(Holder<Item> item, int villagerXp, float priceMultiplier) {
+        int priceForPiece = getPriceForPiece(getArmorEquipmentSlot(item.value()));
+        return new VillagerTrade(new TradeCost(Items.EMERALD, priceForPiece),
+                new ItemStackTemplate(item, 1, DataComponentPatch.EMPTY),
                 1,
                 villagerXp,
-                priceMultiplier);
+                priceMultiplier,
+                Optional.empty(),
+                List.of());
     }
 
     private static EquipmentSlot getArmorEquipmentSlot(Item item) {

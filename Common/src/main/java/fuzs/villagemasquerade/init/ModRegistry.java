@@ -1,7 +1,7 @@
 package fuzs.villagemasquerade.init;
 
-import fuzs.puzzleslib.api.init.v3.registry.ContentRegistrationHelper;
-import fuzs.puzzleslib.api.init.v3.registry.RegistryManager;
+import fuzs.puzzleslib.common.api.init.v3.registry.ContentRegistrationHelper;
+import fuzs.puzzleslib.common.api.init.v3.registry.RegistryManager;
 import fuzs.villagemasquerade.VillageMasquerade;
 import net.minecraft.core.Holder;
 import net.minecraft.core.RegistrySetBuilder;
@@ -13,7 +13,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.SkullBlock;
 
 public class ModRegistry {
-    public static final RegistrySetBuilder REGISTRY_SET_BUILDER = new RegistrySetBuilder();
+    public static final RegistrySetBuilder REGISTRY_SET_BUILDER = new RegistrySetBuilder().add(Registries.VILLAGER_TRADE,
+            ModVillagerTraders::bootstrap);
     public static final SkullBlock.Type VILLAGER_SKULL_TYPE = ContentRegistrationHelper.registerSkullBlockType(
             VillageMasquerade.id("villager"));
     public static final SkullBlock.Type IRON_GOLEM_SKULL_TYPE = ContentRegistrationHelper.registerSkullBlockType(

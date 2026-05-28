@@ -1,7 +1,7 @@
 package fuzs.villagemasquerade.fabric.client;
 
-import fuzs.villagemasquerade.VillageMasquerade;
-import fuzs.villagemasquerade.client.VillageMasqueradeClient;
+import fuzs.villagemasquerade.common.VillageMasquerade;
+import fuzs.villagemasquerade.common.client.VillageMasqueradeClient;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.fabricmc.api.ClientModInitializer;
 

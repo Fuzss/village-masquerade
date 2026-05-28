@@ -1,7 +1,7 @@
 package fuzs.villagemasquerade.fabric;
 
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
-import fuzs.villagemasquerade.VillageMasquerade;
+import fuzs.villagemasquerade.common.VillageMasquerade;
 import net.fabricmc.api.ModInitializer;
 
 public class VillageMasqueradeFabric implements ModInitializer {

@@ -1,0 +1,15 @@
+// 26.1.2	2026-05-28T21:16:14.718502	Tags for minecraft:villager_trade mod id vanilla
+1ae536f3df6c1ace82aeea7a3d5245869d5a3b7e data/minecraft/tags/villager_trade/armorer/level_5.json
+4e7a513fe061fd562628738b95cfeb8979437932 data/minecraft/tags/villager_trade/butcher/level_5.json
+9482fab8885590f66cf94fcba1f9f907034f4602 data/minecraft/tags/villager_trade/cartographer/level_5.json
+6a9a5d0a1f70737e53815ef45250a00e5bfa5f50 data/minecraft/tags/villager_trade/cleric/level_5.json
+4f722c3d9e0b5084469b575650f55066c43bc3b3 data/minecraft/tags/villager_trade/farmer/level_5.json
+14930ec1cbbc14e7f774db1c44ab55a460fa3f17 data/minecraft/tags/villager_trade/fisherman/level_5.json
+c1d3148c47a194c9b68162f543d3a5b01dd2ea9a data/minecraft/tags/villager_trade/fletcher/level_5.json
+ec498fbfc33200fade92a78a4bffe3e2d1743cbc data/minecraft/tags/villager_trade/leatherworker/level_5.json
+c2181d9299f635134799a91fc8ad36f8ec175b6c data/minecraft/tags/villager_trade/librarian/level_5.json
+f7a2673819e84e822f0bad67ba6f3108a81f83af data/minecraft/tags/villager_trade/mason/level_5.json
+0fa5cd244c2efa0cb5cbd5ae2bdfdab6d9ea896e data/minecraft/tags/villager_trade/shepherd/level_5.json
+c9ade962841d4b033c6f55a597f3547d49f5e106 data/minecraft/tags/villager_trade/toolsmith/level_5.json
+a3ea9e7be62d044c03b507bc3310d8e3a1032734 data/minecraft/tags/villager_trade/wandering_trader/uncommon.json
+a576e77781375268ded5793cf7a629e01e4dd19b data/minecraft/tags/villager_trade/weaponsmith/level_5.json

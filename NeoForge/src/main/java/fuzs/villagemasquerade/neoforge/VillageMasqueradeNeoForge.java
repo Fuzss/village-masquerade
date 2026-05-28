@@ -2,15 +2,15 @@ package fuzs.villagemasquerade.neoforge;
 
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
-import fuzs.villagemasquerade.VillageMasquerade;
-import fuzs.villagemasquerade.data.loot.ModBlockLootProvider;
-import fuzs.villagemasquerade.data.loot.ModChestLootProvider;
-import fuzs.villagemasquerade.data.loot.ModEntityLootProvider;
-import fuzs.villagemasquerade.data.tags.ModEntityTypeTagsProvider;
-import fuzs.villagemasquerade.data.tags.ModItemTagsProvider;
-import fuzs.villagemasquerade.data.tags.ModMobEffectTagsProvider;
-import fuzs.villagemasquerade.data.tags.ModVillagerTradeTagsProvider;
-import fuzs.villagemasquerade.init.ModRegistry;
+import fuzs.villagemasquerade.common.VillageMasquerade;
+import fuzs.villagemasquerade.common.data.loot.ModBlockLootProvider;
+import fuzs.villagemasquerade.common.data.loot.ModChestLootProvider;
+import fuzs.villagemasquerade.common.data.loot.ModEntityLootProvider;
+import fuzs.villagemasquerade.common.data.tags.ModEntityTypeTagsProvider;
+import fuzs.villagemasquerade.common.data.tags.ModItemTagsProvider;
+import fuzs.villagemasquerade.common.data.tags.ModMobEffectTagsProvider;
+import fuzs.villagemasquerade.common.data.tags.ModVillagerTradeTagsProvider;
+import fuzs.villagemasquerade.common.init.ModRegistry;
 import net.neoforged.fml.common.Mod;
 
 @Mod(VillageMasquerade.MOD_ID)

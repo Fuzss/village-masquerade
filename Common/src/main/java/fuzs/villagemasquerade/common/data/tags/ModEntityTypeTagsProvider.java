@@ -1,0 +1,32 @@
+package fuzs.villagemasquerade.common.data.tags;
+
+import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.data.v2.tags.AbstractTagProvider;
+import fuzs.villagemasquerade.common.init.ModTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.EntityType;
+
+public class ModEntityTypeTagsProvider extends AbstractTagProvider<EntityType<?>> {
+
+    public ModEntityTypeTagsProvider(DataProviderContext context) {
+        super(Registries.ENTITY_TYPE, context);
+    }
+
+    @Override
+    public void addTags(HolderLookup.Provider registries) {
+        this.tag(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)
+                .add(EntityType.ARMOR_STAND,
+                        EntityType.BOGGED,
+                        EntityType.DROWNED,
+                        EntityType.HUSK,
+                        EntityType.PIGLIN,
+                        EntityType.PIGLIN_BRUTE,
+                        EntityType.PLAYER,
+                        EntityType.STRAY,
+                        EntityType.SKELETON,
+                        EntityType.WITHER_SKELETON,
+                        EntityType.ZOMBIE,
+                        EntityType.ZOMBIFIED_PIGLIN);
+    }
+}

@@ -1,6 +1,6 @@
-// 26.1.2	2026-05-28T21:16:14.721169	Mod Entity Loot Provider
-d55f8ec1f1471a0b54ab3d5a06e010ac26c52931 data/villagemasquerade/loot_table/inject/entities/evoker.json
-6658c42c8a10b7ed3b1b6251243941e7672fb95e data/villagemasquerade/loot_table/inject/entities/iron_golem.json
-61ac28099b4f654c5fea7e64a6eda54f983cfa74 data/villagemasquerade/loot_table/inject/entities/pillager.json
-10cc293590f015d3c37333e702b37c67259a391c data/villagemasquerade/loot_table/inject/entities/vindicator.json
-b8c40cd835611f1cc89ed887288d74e8ee5bb7c6 data/villagemasquerade/loot_table/inject/entities/witch.json
+// 26.2	2026-06-18T22:07:14.104048	Mod Entity Loot Provider
+2a7e137983dc29cd4b4d30ed7a7542a60462fafd data/villagemasquerade/loot_table/inject/entities/evoker.json
+20fed24fe28cd280c86c96de66cfa24ec5c4b28f data/villagemasquerade/loot_table/inject/entities/iron_golem.json
+84a5bbce150d3b1e273a991588c8887e47c82a3c data/villagemasquerade/loot_table/inject/entities/pillager.json
+9ea8b1a0e8c2a847b880647bb77b4916eea79ff4 data/villagemasquerade/loot_table/inject/entities/vindicator.json
+cd63814b7fda4a88185f5a4ea82f3e9f7cbcc695 data/villagemasquerade/loot_table/inject/entities/witch.json

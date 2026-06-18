@@ -4,7 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -27,15 +27,15 @@ public class ModLootTables {
             BuiltInLootTables.VILLAGE_TAIGA_HOUSE);
     public static final ResourceKey<LootTable> VILLAGE_SAVANNA_HOUSE_INJECTION = registerLootTableInjection(
             BuiltInLootTables.VILLAGE_SAVANNA_HOUSE);
-    public static final ResourceKey<LootTable> EVOKER_INJECTION = registerLootTableInjection(EntityType.EVOKER.getDefaultLootTable()
+    public static final ResourceKey<LootTable> EVOKER_INJECTION = registerLootTableInjection(EntityTypes.EVOKER.getDefaultLootTable()
             .orElseThrow());
-    public static final ResourceKey<LootTable> VINDICATOR_INJECTION = registerLootTableInjection(EntityType.VINDICATOR.getDefaultLootTable()
+    public static final ResourceKey<LootTable> VINDICATOR_INJECTION = registerLootTableInjection(EntityTypes.VINDICATOR.getDefaultLootTable()
             .orElseThrow());
-    public static final ResourceKey<LootTable> PILLAGER_INJECTION = registerLootTableInjection(EntityType.PILLAGER.getDefaultLootTable()
+    public static final ResourceKey<LootTable> PILLAGER_INJECTION = registerLootTableInjection(EntityTypes.PILLAGER.getDefaultLootTable()
             .orElseThrow());
-    public static final ResourceKey<LootTable> WITCH_INJECTION = registerLootTableInjection(EntityType.WITCH.getDefaultLootTable()
+    public static final ResourceKey<LootTable> WITCH_INJECTION = registerLootTableInjection(EntityTypes.WITCH.getDefaultLootTable()
             .orElseThrow());
-    public static final ResourceKey<LootTable> IRON_GOLEM_INJECTION = registerLootTableInjection(EntityType.IRON_GOLEM.getDefaultLootTable()
+    public static final ResourceKey<LootTable> IRON_GOLEM_INJECTION = registerLootTableInjection(EntityTypes.IRON_GOLEM.getDefaultLootTable()
             .orElseThrow());
 
     public static void bootstrap() {

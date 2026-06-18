@@ -3,7 +3,6 @@ package fuzs.villagemasquerade.common.util;
 import fuzs.villagemasquerade.common.init.ModRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentPatch;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;

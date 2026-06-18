@@ -6,6 +6,7 @@ import fuzs.villagemasquerade.common.init.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypeIds;
 
 public class ModEntityTypeTagsProvider extends AbstractTagProvider<EntityType<?>> {
 
@@ -16,17 +17,17 @@ public class ModEntityTypeTagsProvider extends AbstractTagProvider<EntityType<?>
     @Override
     public void addTags(HolderLookup.Provider registries) {
         this.tag(ModTags.FASHIONABLE_ENTITY_TYPE_TAG)
-                .add(EntityType.ARMOR_STAND,
-                        EntityType.BOGGED,
-                        EntityType.DROWNED,
-                        EntityType.HUSK,
-                        EntityType.PIGLIN,
-                        EntityType.PIGLIN_BRUTE,
-                        EntityType.PLAYER,
-                        EntityType.STRAY,
-                        EntityType.SKELETON,
-                        EntityType.WITHER_SKELETON,
-                        EntityType.ZOMBIE,
-                        EntityType.ZOMBIFIED_PIGLIN);
+                .add(EntityTypeIds.ARMOR_STAND,
+                        EntityTypeIds.BOGGED,
+                        EntityTypeIds.DROWNED,
+                        EntityTypeIds.HUSK,
+                        EntityTypeIds.PIGLIN,
+                        EntityTypeIds.PIGLIN_BRUTE,
+                        EntityTypeIds.PLAYER,
+                        EntityTypeIds.STRAY,
+                        EntityTypeIds.SKELETON,
+                        EntityTypeIds.WITHER_SKELETON,
+                        EntityTypeIds.ZOMBIE,
+                        EntityTypeIds.ZOMBIFIED_PIGLIN);
     }
 }

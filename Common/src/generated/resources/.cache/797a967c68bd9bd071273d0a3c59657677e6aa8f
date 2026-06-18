@@ -1,7 +1,7 @@
-// 26.1.2	2026-05-28T21:16:14.721303	Mod Chest Loot Provider
-847eeab50de02ee7cfc44cd7f46df349ca8c5ba7 data/villagemasquerade/loot_table/inject/chests/igloo_chest.json
-3b31821758060d15f280874a9fe673b6d0ba1898 data/villagemasquerade/loot_table/inject/chests/village/village_desert_house.json
-a19de03693de251bc81ed648a0f6f712fafff75b data/villagemasquerade/loot_table/inject/chests/village/village_plains_house.json
-7b941b6049b75b742249d57ff1cb401ef7000fe4 data/villagemasquerade/loot_table/inject/chests/village/village_savanna_house.json
-4a4dfe1077dc66d4f1c932dc93179406cd7ed6ce data/villagemasquerade/loot_table/inject/chests/village/village_snowy_house.json
-7f69ce57b52f1e1bc5c551bbfbb98f65e9aff98d data/villagemasquerade/loot_table/inject/chests/village/village_taiga_house.json
+// 26.2	2026-06-18T22:07:14.104343	Mod Chest Loot Provider
+dbb7d79a2c0bd22df837a514be4fa27bba335215 data/villagemasquerade/loot_table/inject/chests/igloo_chest.json
+a1766ef3547c85780f8d9f43402d619ec9342c64 data/villagemasquerade/loot_table/inject/chests/village/village_desert_house.json
+a16f7861a8becce8229e36552e94e9759d1a476f data/villagemasquerade/loot_table/inject/chests/village/village_plains_house.json
+e5c07088648eb796e2b70288d911d4fa9f70a925 data/villagemasquerade/loot_table/inject/chests/village/village_savanna_house.json
+d3b021c0bffcd74b0ac3f54238f25855ee6a423c data/villagemasquerade/loot_table/inject/chests/village/village_snowy_house.json
+6786f0936063d2c4595c1eed88afbef98836ec25 data/villagemasquerade/loot_table/inject/chests/village/village_taiga_house.json

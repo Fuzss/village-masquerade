@@ -3,5 +3,12 @@
     "1.21.11": "archived",
     "26.1.x": "maintained",
     "26.2.x": "primary"
+  },
+  "properties": {
+    "distributions.curseforge.id": "1370923",
+    "distributions.curseforge.slug": "village-masquerade",
+    "distributions.github.slug": "village-masquerade",
+    "distributions.modrinth.id": "leFnAa7O",
+    "distributions.modrinth.slug": "village-masquerade"
   }
 }

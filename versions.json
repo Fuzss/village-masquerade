@@ -4,11 +4,17 @@
     "26.1.x": "maintained",
     "26.2.x": "primary"
   },
-  "properties": {
-    "distributions.curseforge.id": "1370923",
-    "distributions.curseforge.slug": "village-masquerade",
-    "distributions.github.slug": "village-masquerade",
-    "distributions.modrinth.id": "leFnAa7O",
-    "distributions.modrinth.slug": "village-masquerade"
+  "distributions": {
+    "curseforge": {
+      "id": "1370923",
+      "slug": "village-masquerade"
+    },
+    "github": {
+      "slug": "village-masquerade"
+    },
+    "modrinth": {
+      "id": "leFnAa7O",
+      "slug": "village-masquerade"
+    }
   }
 }

@@ -5,20 +5,18 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_components",
-              "include": [
-                "minecraft:note_block_sound",
-                "minecraft:custom_name"
-              ],
-              "source": "block_entity"
-            }
-          ],
+          "modifier": {
+            "type": "minecraft:copy_components",
+            "include": [
+              "minecraft:note_block_sound",
+              "minecraft:custom_name"
+            ],
+            "source": "block_entity"
+          },
           "name": "villagemasquerade:illager_head"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ],
   "random_sequence": "villagemasquerade:blocks/illager_head"

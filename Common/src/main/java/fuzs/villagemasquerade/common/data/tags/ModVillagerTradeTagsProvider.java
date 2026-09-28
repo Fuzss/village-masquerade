@@ -1,14 +1,14 @@
 package fuzs.villagemasquerade.common.data.tags;
 
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
-import fuzs.puzzleslib.common.api.data.v2.tags.AbstractTagProvider;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.data.v3.tags.AbstractTagsProvider;
 import fuzs.villagemasquerade.common.init.ModVillagerTraders;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.VillagerTradeTags;
 import net.minecraft.world.item.trading.VillagerTrade;
 
-public class ModVillagerTradeTagsProvider extends AbstractTagProvider<VillagerTrade> {
+public class ModVillagerTradeTagsProvider extends AbstractTagsProvider<VillagerTrade> {
 
     public ModVillagerTradeTagsProvider(DataProviderContext context) {
         super(Registries.VILLAGER_TRADE, context);

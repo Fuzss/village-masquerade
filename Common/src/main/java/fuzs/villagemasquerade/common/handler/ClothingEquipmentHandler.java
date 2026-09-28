@@ -2,7 +2,6 @@ package fuzs.villagemasquerade.common.handler;
 
 import com.google.common.collect.ImmutableList;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
-import fuzs.puzzleslib.common.api.event.v1.data.MutableDouble;
 import fuzs.villagemasquerade.common.init.ModItems;
 import fuzs.villagemasquerade.common.init.ModTags;
 import net.minecraft.core.Holder;
@@ -18,7 +17,6 @@ import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.golem.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -82,13 +80,6 @@ public class ClothingEquipmentHandler {
         }
 
         return EventResult.PASS;
-    }
-
-    public static void onCalculateLivingVisibility(LivingEntity livingEntity, @Nullable Entity lookingEntity, MutableDouble visibilityPercentage) {
-        if (lookingEntity instanceof Enemy && lookingEntity.level().isDarkOutside() && isWearingOutfit(livingEntity,
-                ModTags.WANDERING_TRADER_CLOTHING_ITEM_TAG)) {
-            visibilityPercentage.mapAsDouble((double value) -> value * 0.25);
-        }
     }
 
     public static EventResult onMobEffectAffects(LivingEntity livingEntity, MobEffectInstance mobEffect) {

@@ -1,7 +1,7 @@
 package fuzs.villagemasquerade.common.data.client;
 
-import fuzs.puzzleslib.common.api.client.data.v2.AbstractEquipmentProvider;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.client.data.v3.equipment.AbstractEquipmentProvider;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
 import fuzs.villagemasquerade.common.VillageMasquerade;
 import fuzs.villagemasquerade.common.client.init.ModEnumConstants;
 import fuzs.villagemasquerade.common.init.ModEquipmentAssets;

@@ -18,9 +18,6 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.TradeCost;
 import net.minecraft.world.item.trading.VillagerTrade;
 
-import java.util.List;
-import java.util.Optional;
-
 public class VillagerTradingHelper {
 
     public static VillagerTrade createVillagerTrade(Holder<Item> item, EquipmentSlot equipmentSlot) {
@@ -33,13 +30,11 @@ public class VillagerTradingHelper {
 
     private static VillagerTrade createTrade(Holder<Item> item, EquipmentSlot equipmentSlot, int villagerXp, float priceMultiplier) {
         int priceForPiece = getPriceForPiece(equipmentSlot);
-        return new VillagerTrade(new TradeCost(Items.EMERALD, priceForPiece),
+        return VillagerTrade.builder(new TradeCost(Items.EMERALD, priceForPiece),
                 new ItemStackTemplate(item, 1, DataComponentPatch.EMPTY),
                 1,
                 villagerXp,
-                priceMultiplier,
-                Optional.empty(),
-                List.of());
+                priceMultiplier).build();
     }
 
     private static int getPriceForPiece(EquipmentSlot equipmentSlot) {

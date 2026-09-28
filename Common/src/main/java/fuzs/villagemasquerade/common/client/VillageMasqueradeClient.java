@@ -6,7 +6,7 @@ import fuzs.puzzleslib.common.api.client.core.v1.context.LayerDefinitionsContext
 import fuzs.puzzleslib.common.api.client.core.v1.context.SkullRenderersContext;
 import fuzs.puzzleslib.common.api.client.event.v1.renderer.AddLivingEntityRenderLayersCallback;
 import fuzs.puzzleslib.common.api.client.gui.v2.tooltip.ItemTooltipRegistry;
-import fuzs.puzzleslib.common.api.init.v3.registry.ResourceKeyHelper;
+import fuzs.puzzleslib.common.api.init.v3.registry.ContentRegistrationHelper;
 import fuzs.villagemasquerade.common.VillageMasquerade;
 import fuzs.villagemasquerade.common.client.handler.EquipmentRenderingHandler;
 import fuzs.villagemasquerade.common.client.init.ModEnumConstants;
@@ -44,13 +44,12 @@ import org.jspecify.annotations.Nullable;
 import java.util.function.Consumer;
 
 public class VillageMasqueradeClient implements ClientModConstructor {
-    public static final String VILLAGER_CLOTHING_DESCRIPTION_KEY = ResourceKeyHelper.getTranslationKey(Registries.ITEM,
-            VillageMasquerade.id("villager_clothing.description"));
-    public static final String ENEMY_CLOTHING_DESCRIPTION_KEY = ResourceKeyHelper.getTranslationKey(Registries.ITEM,
-            VillageMasquerade.id("enemy_clothing.description"));
-    public static final String WANDERING_TRADER_CLOTHING_DESCRIPTION_KEY = ResourceKeyHelper.getTranslationKey(
-            Registries.ITEM,
-            VillageMasquerade.id("wandering_trader_clothing.description"));
+    public static final String VILLAGER_CLOTHING_DESCRIPTION_KEY = ContentRegistrationHelper.getTranslationKey(
+            ResourceKey.create(Registries.ITEM, VillageMasquerade.id("villager_clothing.description")));
+    public static final String ENEMY_CLOTHING_DESCRIPTION_KEY = ContentRegistrationHelper.getTranslationKey(
+            ResourceKey.create(Registries.ITEM, VillageMasquerade.id("enemy_clothing.description")));
+    public static final String WANDERING_TRADER_CLOTHING_DESCRIPTION_KEY = ContentRegistrationHelper.getTranslationKey(
+            ResourceKey.create(Registries.ITEM, VillageMasquerade.id("wandering_trader_clothing.description")));
     private static final MeshTransformer HUSK_TRANSFORMER = MeshTransformer.scaling(1.0625F);
     private static final MeshTransformer WITHER_SKELETON_TRANSFORMER = MeshTransformer.scaling(1.2F);
 

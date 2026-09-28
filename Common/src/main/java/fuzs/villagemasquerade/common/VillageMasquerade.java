@@ -3,7 +3,6 @@ package fuzs.villagemasquerade.common;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.common.api.event.v1.AddBlockEntityTypeBlocksCallback;
 import fuzs.puzzleslib.common.api.event.v1.entity.ServerEntityEvents;
-import fuzs.puzzleslib.common.api.event.v1.entity.living.CalculateLivingVisibilityCallback;
 import fuzs.puzzleslib.common.api.event.v1.entity.living.LivingDropsCallback;
 import fuzs.puzzleslib.common.api.event.v1.entity.living.MobEffectEvents;
 import fuzs.puzzleslib.common.api.event.v1.server.LootTableLoadCallback;
@@ -32,7 +31,6 @@ public class VillageMasquerade implements ModConstructor {
         LootTableLoadCallback.EVENT.register(ModLootTables::onLootTableLoad);
         ServerEntityEvents.JOIN.register(ClothingEquipmentHandler::onEntityJoin);
         MobEffectEvents.AFFECTS.register(ClothingEquipmentHandler::onMobEffectAffects);
-        CalculateLivingVisibilityCallback.EVENT.register(ClothingEquipmentHandler::onCalculateLivingVisibility);
     }
 
     public static Identifier id(String path) {

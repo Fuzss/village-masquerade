@@ -1,9 +1,9 @@
 package fuzs.villagemasquerade.common.data.client;
 
-import fuzs.puzzleslib.common.api.client.data.v2.AbstractModelProvider;
-import fuzs.puzzleslib.common.api.client.data.v2.models.ModelLocationHelper;
+import fuzs.puzzleslib.common.api.client.data.v3.models.AbstractModelProvider;
+import fuzs.puzzleslib.common.api.client.data.v3.models.ModelLocationHelper;
 import net.minecraft.resources.Identifier;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
 import fuzs.villagemasquerade.common.init.ModBlocks;
 import fuzs.villagemasquerade.common.init.ModItems;
 import fuzs.villagemasquerade.common.init.ModRegistry;
